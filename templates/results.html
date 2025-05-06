@@ -1,0 +1,18 @@
+{% extends "models/layout.html" %}
+{% block title %}Résultats pour "{{ query }}"{% endblock %}
+{% block content %}
+<h1 id="results-title">Résultats pour "{{ query }}"</h1>
+<ul id="results-list">
+    {% for video in results %}
+    <li class="result-item">
+        <h3 class="video-title">{{ video['title'] }}</h3>
+        <p class="video-meta">{{ video['channel'] }} ({{ video['duration'] }})</p>
+        <a class="video-link" href="/play/{{video['id']}}">
+            <img class="video-thumbnail" width="560" height="315" src="{{ video['thumbnails'][0] }}"
+                alt="Miniature de la vidéo">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<a class="back-link" href="/">Retour</a>
+{% endblock %}

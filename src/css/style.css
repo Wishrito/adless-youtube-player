@@ -1,0 +1,190 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Contenu principal */
+#content {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Pied de page */
+#footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 40px;
+    padding: 20px;
+}
+/* Titre de la page */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #222;
+}
+
+/* Vidéo centrée et responsive */
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Lien de retour */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Titre de la page de résultats */
+#results-title {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #222;
+}
+
+/* Liste des résultats */
+#results-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Élément individuel */
+.result-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+}
+
+.result-item:hover {
+    transform: scale(1.01);
+}
+
+/* Titre de la vidéo */
+.video-title {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    color: #111;
+}
+
+/* Métadonnées */
+.video-meta {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+/* Image de miniature */
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Lien retour */
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    text-align: center;
+    color: #007BFF;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #0056b3;
+}
+/* Titre du lecteur */
+#player-title {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+/* Formulaire de recherche */
+#search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Champ de saisie */
+.search-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Bouton */
+.search-button {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}

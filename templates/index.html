@@ -1,0 +1,10 @@
+{% extends "models/layout.html" %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+<h1 id="player-title">Lecture vidéo Youtube sans pubs</h1>
+<form id="search-form" method="post">
+    <label for="query">Entrez votre recherche</label><br>
+    <input type="text" id="query" name="query" class="search-input" required>
+    <button type="submit" class="search-button">Rechercher</button>
+</form>
+{% endblock %}

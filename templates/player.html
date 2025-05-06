@@ -1,0 +1,10 @@
+{% extends "models/layout.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+
+    <h1>{{ title }}</h1>
+    {% include 'models/video_player.html' with context %}
+
+    <br>
+    <a href="{{ url_for('index') }}">Retour</a>
+{% endblock %}
