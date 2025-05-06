@@ -1,11 +1,10 @@
-from pathlib import Path
-from flask import Flask, render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for
 from yt_dlp import YoutubeDL
 from youtube_search import YoutubeSearch
 
-app = Flask(__name__)
-app.template_folder = Path(__file__).parent / "templates"
-app.static_folder = Path(__file__).parent / "src"
+from modules.classes import AdlessYTBPlayer
+
+app = AdlessYTBPlayer(__name__)
 
 def get_video_url(youtube_url: str):
     ydl_opts = {
@@ -31,12 +30,18 @@ def search(query: str):
     results = YoutubeSearch(query, max_results=10).to_dict()
     return render_template("results.html", results=results, query=query)
 
+
 @app.route("/play/<video_id>")
-def play(video_id: str):
-    url = f"https://www.youtube.com/watch?v={video_id}"
-    video_url, title = get_video_url(url)
-    return render_template("player.html", video_url=video_url, title=title)
+def play(video_id):
+    # Tu dois avoir la logique pour récupérer la vidéo actuelle et les résultats
+    video_src, title = get_video_url(video_id)
+    query = request.args.get("query", "")
+    results = search(query) if query else []
+
+    return render_template(
+        "player.html", title=title, video_url=video_src, query=query, results=results
+    )
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if not app.vercel_project_production_url:
+    app.run(host="localhost", port=5000, debug=True)
