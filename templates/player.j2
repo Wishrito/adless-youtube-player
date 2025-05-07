@@ -1,0 +1,34 @@
+{% extends "models/layout.j2" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="player-layout">
+    <!-- Colonne de gauche : résultats -->
+    {% if query %}
+    <aside class="results-sidebar">
+        <h2>Résultats pour "{{ query }}"</h2>
+        <ul class="results-list">
+            {% for video in results %}
+            <li class="result-item">
+                <a class="video-link" href="{{ url_for('play', video_id=video['id'], query=query) }}">
+                    <img class="video-thumbnail" src="{{ video['thumbnails'][0] }}" alt="Miniature">
+                    <div class="video-info">
+                        <p class="video-title">{{ video['title'] }}</p>
+                        <p class="video-meta">{{ video['channel'] }} - {{ video['duration'] }}</p>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </aside>
+    {% endif %}
+
+    <!-- Colonne de droite : lecteur -->
+    <main class="video-player-area">
+        <h1>{{ title }}</h1>
+        {% include 'models/video_player.j2' with context %}
+        <br>
+        <a href="{{ url_for('index') }}">Retour</a>
+    </main>
+    </div>
+{% endblock %}

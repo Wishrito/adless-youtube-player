@@ -57,8 +57,9 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 - `app.py` : Fichier principal contenant la logique de l'application Flask.
 - `requirements.txt` : Liste des dépendances Python nécessaires.
-- `templates/` : Dossier contenant les fichiers HTML pour l'interface utilisateur.
+- `templates/` : Dossier contenant les fichiers Jinja2 (HTML) pour l'interface utilisateur.
 - `src/` : Dossier contenant les fichiers statiques (CSS, JavaScript, etc.).
+- `modules/` : Dossier contenant les possibles dépendances nécessaires à l'initialisation de l'application (classes, enums,...).
 
 ## Dépendances
 
