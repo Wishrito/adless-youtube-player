@@ -8,6 +8,7 @@ from modules.classes import app
 
 def get_video_url(youtube_url: str, cookie: str):
     ydl_opts = {
+        "cookiesfrombrowser": ("chrome",),
         "headers": {"Cookie": cookie},
         "quiet": True,
         "format": "best[ext=mp4][protocol=https]",
@@ -44,7 +45,11 @@ def play(video_id: str):
     results = search(query) if query else []
 
     return render_template(
-        "player.j2", title=title, video_url=video_src, query=query, results=results
+        "player.j2",
+        title=title,
+        video_url=video_src,
+        query=query,
+        results=results,
     )
 
 
